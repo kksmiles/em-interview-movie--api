@@ -1,0 +1,58 @@
+{
+  "status": "success",
+  "message": "Package successfully retrieved",
+  "data": {
+      "slug": "the-matrix",
+      "title": "The Matrix",
+      "description": "A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.",
+      "released_date": null,
+      "available_until": "2023-06-30T23:59:59.000000Z",
+      "length_in_seconds": 8160,
+      "pictures": [
+          {
+              "id": 1,
+              "title": "The matrix one",
+              "description": "First picture of the matrix movie",
+              "image_url": "https://placekitten.com/320/180",
+              "order": 1
+          },
+          {
+              "id": 2,
+              "title": "The matrix two",
+              "description": "Second picture of the matrix movie",
+              "image_url": "https://placekitten.com/336/189",
+              "order": 2
+          }
+      ],
+      "tags": [
+          {
+              "id": 3,
+              "name": "Sci-fi",
+              "deleted_at": null
+          },
+          {
+              "id": 6,
+              "name": "Epic",
+              "deleted_at": null
+          }
+      ],
+      "categories": [
+          {
+              "id": 1,
+              "name": "Action",
+              "deleted_at": null
+          },
+          {
+              "id": 3,
+              "name": "Animation",
+              "deleted_at": null
+          },
+          {
+              "id": 5,
+              "name": "Comedy",
+              "deleted_at": null
+          }
+      ],
+      "deleted_at": null
+  }
+}

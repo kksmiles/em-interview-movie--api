@@ -1,0 +1,20 @@
+{
+  "status": "success",
+  "message": "Tag successfully retrieved",
+  "data": {
+      "id": 5,
+      "name": "Psychological",
+      "movies": [
+          {
+              "slug": "the-dark-knight",
+              "title": "The Dark Knight",
+              "description": "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
+              "released_date": null,
+              "available_until": "2023-06-30T23:59:59.000000Z",
+              "length_in_seconds": 9120,
+              "deleted_at": null
+          }
+      ],
+      "deleted_at": null
+  }
+}

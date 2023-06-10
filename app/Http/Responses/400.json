@@ -1,0 +1,8 @@
+{
+  "message": "The example_field1 is required. (and 2 more errors)",
+  "errors": {
+      "example_field1": ["The example_field1 field is required."],
+      "example_field2": ["The example_field2 field must be numeric."],
+      "example_field3": ["The example_field3 field must be a date."]
+  }
+}

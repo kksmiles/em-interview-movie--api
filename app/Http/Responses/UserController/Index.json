@@ -1,0 +1,106 @@
+{
+  "data": [
+      {
+          "id": 1,
+          "name": "Irma Cronin",
+          "email": "conor.williamson@example.org",
+          "phone_no": "1-931-312-0031",
+          "deleted_at": null
+      },
+      {
+          "id": 2,
+          "name": "Clifton Sanford MD",
+          "email": "orrin32@example.com",
+          "phone_no": "(541) 520-3759",
+          "deleted_at": null
+      },
+      {
+          "id": 3,
+          "name": "Dr. Earnestine Pacocha",
+          "email": "llewellyn32@example.net",
+          "phone_no": "1-682-751-0553",
+          "deleted_at": null
+      },
+      {
+          "id": 4,
+          "name": "Vernie Roberts",
+          "email": "schuster.blake@example.org",
+          "phone_no": "+1-228-783-6278",
+          "deleted_at": null
+      },
+      {
+          "id": 5,
+          "name": "Rylan Heaney I",
+          "email": "ckonopelski@example.net",
+          "phone_no": "(973) 586-8948",
+          "deleted_at": null
+      },
+      {
+          "id": 6,
+          "name": "Isabell Pagac",
+          "email": "frederic.kuhn@example.net",
+          "phone_no": "(508) 754-0538",
+          "deleted_at": null
+      },
+      {
+          "id": 7,
+          "name": "Mr. Bud D'Amore",
+          "email": "daija.corkery@example.org",
+          "phone_no": "(270) 303-9172",
+          "deleted_at": null
+      },
+      {
+          "id": 8,
+          "name": "Dr. Lloyd Cassin",
+          "email": "raven85@example.org",
+          "phone_no": "1-220-300-6490",
+          "deleted_at": null
+      },
+      {
+          "id": 9,
+          "name": "Dr. Natalie Collier III",
+          "email": "odaniel@example.net",
+          "phone_no": "(986) 979-0901",
+          "deleted_at": null
+      },
+      {
+          "id": 10,
+          "name": "Prof. Darron Bechtelar",
+          "email": "randall.macejkovic@example.com",
+          "phone_no": "+13604221010",
+          "deleted_at": null
+      }
+  ],
+  "links": {
+      "first": "http://movie-api.test/api/users?page=1",
+      "last": "http://movie-api.test/api/users?page=1",
+      "prev": null,
+      "next": null
+  },
+  "meta": {
+      "current_page": 1,
+      "from": 1,
+      "last_page": 1,
+      "links": [
+          {
+              "url": null,
+              "label": "&laquo; Previous",
+              "active": false
+          },
+          {
+              "url": "http://movie-api.test/api/users?page=1",
+              "label": "1",
+              "active": true
+          },
+          {
+              "url": null,
+              "label": "Next &raquo;",
+              "active": false
+          }
+      ],
+      "path": "http://movie-api.test/api/users",
+      "per_page": 15,
+      "to": 10,
+      "total": 10
+  }
+}

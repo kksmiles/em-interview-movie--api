@@ -1,5 +1,6 @@
 <?php
 
+use App\Jobs\DeleteMoviePictureFile;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +16,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('/test-job', function () {
+    DeleteMoviePictureFile::dispatchSync(now()->subDays(7));
 });

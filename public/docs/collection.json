@@ -1,0 +1,1630 @@
+{
+    "variable": [
+        {
+            "id": "baseUrl",
+            "key": "baseUrl",
+            "type": "string",
+            "name": "string",
+            "value": "http:\/\/movie-api.test"
+        }
+    ],
+    "info": {
+        "name": "Laravel",
+        "_postman_id": "74922a86-127a-4a6a-96d4-58c09d119508",
+        "description": "",
+        "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
+    },
+    "item": [
+        {
+            "name": "Category management",
+            "description": "\nAPIs for managing categories",
+            "item": [
+                {
+                    "name": "Force Destroy Category",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/categories\/:id\/forceDestroy",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/categories\/:id\/forceDestroy",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "id",
+                                    "description": "The ID of the category."
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "This endpoint will permanently delete a category",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n  \"status\": \"success\",\n  \"message\": \"Category successfully deleted\"\n}",
+                            "name": "Success"
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n  \"message\": \"No query results for model [App\\\\Models\\\\ModelName] 1\"\n}\n",
+                            "name": "Not Found"
+                        }
+                    ]
+                },
+                {
+                    "name": "Restore category",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/categories\/:id\/restore",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/categories\/:id\/restore",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "sit",
+                                    "description": "The ID of the category."
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "This endpoint will restore a category",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n  \"status\": \"success\",\n  \"message\": \"Category successfully restored\"\n}",
+                            "name": "Success"
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n  \"message\": \"No query results for model [App\\\\Models\\\\ModelName] 1\"\n}\n",
+                            "name": "Not Found"
+                        }
+                    ]
+                },
+                {
+                    "name": "Index Categories",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/categories",
+                            "query": [
+                                {
+                                    "key": "include_trashed",
+                                    "value": "",
+                                    "description": "Include trashed users.",
+                                    "disabled": true
+                                }
+                            ],
+                            "raw": "{{baseUrl}}\/api\/categories?include_trashed="
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "This endpoint will list all categories",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n  \"data\": [\n      {\n          \"id\": 1,\n          \"name\": \"Action\",\n          \"deleted_at\": null\n      },\n      {\n          \"id\": 2,\n          \"name\": \"Adventure\",\n          \"deleted_at\": null\n      },\n      {\n          \"id\": 3,\n          \"name\": \"Animation\",\n          \"deleted_at\": null\n      },\n      {\n          \"id\": 4,\n          \"name\": \"Biography\",\n          \"deleted_at\": null\n      },\n      {\n          \"id\": 5,\n          \"name\": \"Comedy\",\n          \"deleted_at\": null\n      },\n      {\n          \"id\": 6,\n          \"name\": \"Crime\",\n          \"deleted_at\": null\n      },\n      {\n          \"id\": 7,\n          \"name\": \"Sci-Fi\",\n          \"deleted_at\": null\n      },\n      {\n          \"id\": 8,\n          \"name\": \"Drama\",\n          \"deleted_at\": null\n      },\n      {\n          \"id\": 9,\n          \"name\": \"Fantasy\",\n          \"deleted_at\": null\n      },\n      {\n          \"id\": 10,\n          \"name\": \"Horror\",\n          \"deleted_at\": null\n      }\n  ],\n  \"links\": {\n      \"first\": \"http:\/\/movie-api.test\/api\/categories?page=1\",\n      \"last\": \"http:\/\/movie-api.test\/api\/categories?page=1\",\n      \"prev\": null,\n      \"next\": null\n  },\n  \"meta\": {\n      \"current_page\": 1,\n      \"from\": 1,\n      \"last_page\": 1,\n      \"links\": [\n          {\n              \"url\": null,\n              \"label\": \"&laquo; Previous\",\n              \"active\": false\n          },\n          {\n              \"url\": \"http:\/\/movie-api.test\/api\/categories?page=1\",\n              \"label\": \"1\",\n              \"active\": true\n          },\n          {\n              \"url\": null,\n              \"label\": \"Next &raquo;\",\n              \"active\": false\n          }\n      ],\n      \"path\": \"http:\/\/movie-api.test\/api\/categories\",\n      \"per_page\": 15,\n      \"to\": 10,\n      \"total\": 10\n  }\n}",
+                            "name": "Success"
+                        }
+                    ]
+                },
+                {
+                    "name": "Store Category",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/categories",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/categories"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"My Category\"}"
+                        },
+                        "description": "This endpoint will create a new category",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 201,
+                            "body": "{\n  \"status\": \"success\",\n  \"message\": \"Category successfully created\"\n}",
+                            "name": "Success"
+                        },
+                        {
+                            "header": [],
+                            "code": 400,
+                            "body": "{\n  \"message\": \"The example_field1 is required. (and 2 more errors)\",\n  \"errors\": {\n      \"example_field1\": [\"The example_field1 field is required.\"],\n      \"example_field2\": [\"The example_field2 field must be numeric.\"],\n      \"example_field3\": [\"The example_field3 field must be a date.\"]\n  }\n}\n",
+                            "name": "Validation Error"
+                        }
+                    ]
+                },
+                {
+                    "name": "Show category",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/categories\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/categories\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the category."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "This endpoint will show the details of the category including favourite movies, categories and categories",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n  \"status\": \"success\",\n  \"message\": \"Category successfully retrieved\",\n  \"data\": {\n      \"id\": 4,\n      \"name\": \"Biography\",\n      \"movies\": [\n          {\n              \"slug\": \"titanic\",\n              \"title\": \"Titanic\",\n              \"description\": \"A seventeen-year-old aristocrat falls in love with a kind but poor artist aboard the luxurious, ill-fated R.M.S. Titanic.\",\n              \"released_date\": null,\n              \"available_until\": \"2023-06-30T23:59:59.000000Z\",\n              \"length_in_seconds\": 11640,\n              \"deleted_at\": null\n          }\n      ],\n      \"deleted_at\": null\n  }\n}",
+                            "name": "Success"
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n  \"message\": \"No query results for model [App\\\\Models\\\\ModelName] 1\"\n}\n",
+                            "name": "Not Found"
+                        }
+                    ]
+                },
+                {
+                    "name": "Update Category",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/categories\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/categories\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "11",
+                                    "description": "The ID of the category."
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"My Category\"}"
+                        },
+                        "description": "This endpoint will update a Category",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n  \"status\": \"success\",\n  \"message\": \"Category successfully updated\"\n}",
+                            "name": "Success"
+                        },
+                        {
+                            "header": [],
+                            "code": 400,
+                            "body": "{\n  \"message\": \"The example_field1 is required. (and 2 more errors)\",\n  \"errors\": {\n      \"example_field1\": [\"The example_field1 field is required.\"],\n      \"example_field2\": [\"The example_field2 field must be numeric.\"],\n      \"example_field3\": [\"The example_field3 field must be a date.\"]\n  }\n}\n",
+                            "name": "Validation Error"
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n  \"message\": \"No query results for model [App\\\\Models\\\\ModelName] 1\"\n}\n",
+                            "name": "Not Found"
+                        }
+                    ]
+                },
+                {
+                    "name": "Delete category",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/categories\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/categories\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "17",
+                                    "description": "The ID of the category."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "This endpoint will delete a category",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n  \"status\": \"success\",\n  \"message\": \"Category successfully trashed\"\n}",
+                            "name": "Success"
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n  \"message\": \"No query results for model [App\\\\Models\\\\ModelName] 1\"\n}\n",
+                            "name": "Not Found"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Movie Picture management",
+            "description": "\nAPIs for fetching movie pictures",
+            "item": [
+                {
+                    "name": "Fetch Movie Picture",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/movie_pictures\/fetch",
+                            "query": [
+                                {
+                                    "key": "path",
+                                    "value": "movies%2F1%2F1.jpg",
+                                    "description": "The path of the movie picture.",
+                                    "disabled": false
+                                }
+                            ],
+                            "raw": "{{baseUrl}}\/api\/movie_pictures\/fetch?path=movies%2F1%2F1.jpg"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "This endpoint will let you fetch the image of a given movie picture path",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n  \n}",
+                            "name": "Success"
+                        },
+                        {
+                            "header": [],
+                            "code": 400,
+                            "body": "{\n  \"message\": \"The example_field1 is required. (and 2 more errors)\",\n  \"errors\": {\n      \"example_field1\": [\"The example_field1 field is required.\"],\n      \"example_field2\": [\"The example_field2 field must be numeric.\"],\n      \"example_field3\": [\"The example_field3 field must be a date.\"]\n  }\n}\n",
+                            "name": "Validation Error"
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n  \"message\": \"No query results for model [App\\\\Models\\\\ModelName] 1\"\n}\n",
+                            "name": "Not Found"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Movie management",
+            "description": "\nAPIs for managing movies",
+            "item": [
+                {
+                    "name": "Force Destroy movie",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/movies\/:id\/forceDestroy",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/movies\/:id\/forceDestroy",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "occaecati",
+                                    "description": "The ID of the movie."
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "This endpoint will permanently delete a movie",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n  \"status\": \"success\",\n  \"message\": \"Movie successfully deleted\"\n}",
+                            "name": "Success"
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n  \"message\": \"No query results for model [App\\\\Models\\\\ModelName] 1\"\n}\n",
+                            "name": "Not Found"
+                        }
+                    ]
+                },
+                {
+                    "name": "Restore movie",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/movies\/:id\/restore",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/movies\/:id\/restore",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "neque",
+                                    "description": "The ID of the movie."
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "This endpoint will restore a movie",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n  \"status\": \"success\",\n  \"message\": \"Movie successfully restored\"\n}",
+                            "name": "Success"
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n  \"message\": \"No query results for model [App\\\\Models\\\\ModelName] 1\"\n}\n",
+                            "name": "Not Found"
+                        }
+                    ]
+                },
+                {
+                    "name": "Index Movies",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/movies",
+                            "query": [
+                                {
+                                    "key": "include_trashed",
+                                    "value": "",
+                                    "description": "Include trashed users.",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "category_ids[0]",
+                                    "value": 1,
+                                    "description": "Filter by category ids.",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "tag_ids[0]",
+                                    "value": 1,
+                                    "description": "Filter by tag ids.",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "include_categories",
+                                    "value": "",
+                                    "description": "Include categories.",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "include_tags",
+                                    "value": "",
+                                    "description": "Include tags.",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "include_pictures",
+                                    "value": "",
+                                    "description": "Include pictures.",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "strict_filter",
+                                    "value": "",
+                                    "description": "Whether to strictly filter by category and tag ids.",
+                                    "disabled": true
+                                }
+                            ],
+                            "raw": "{{baseUrl}}\/api\/movies?include_trashed=&category_ids[0]=1&tag_ids[0]=1&include_categories=&include_tags=&include_pictures=&strict_filter="
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "This endpoint will list all movies",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n  \"data\": [\n      {\n          \"slug\": \"the-matrix\",\n          \"title\": \"The Matrix\",\n          \"description\": \"A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.\",\n          \"released_date\": null,\n          \"available_until\": \"2023-06-30T23:59:59.000000Z\",\n          \"length_in_seconds\": 8160,\n          \"deleted_at\": null\n      },\n      {\n          \"slug\": \"titanic\",\n          \"title\": \"Titanic\",\n          \"description\": \"A seventeen-year-old aristocrat falls in love with a kind but poor artist aboard the luxurious, ill-fated R.M.S. Titanic.\",\n          \"released_date\": null,\n          \"available_until\": \"2023-06-30T23:59:59.000000Z\",\n          \"length_in_seconds\": 11640,\n          \"deleted_at\": null\n      },\n      {\n          \"slug\": \"star-wars-episode-v-the-empire-strikes-back\",\n          \"title\": \"Star Wars: Episode V - The Empire Strikes Back\",\n          \"description\": \"After the Rebels are brutally overpowered by the Empire on the ice planet Hoth, Luke Skywalker begins Jedi training with Yoda, while his friends are pursued by Darth Vader and a bounty hunter named Boba Fett all over the galaxy.\",\n          \"released_date\": null,\n          \"available_until\": \"2023-06-30T23:59:59.000000Z\",\n          \"length_in_seconds\": 7440,\n          \"deleted_at\": null\n      }\n  ],\n  \"links\": {\n      \"first\": \"http:\/\/movie-api.test\/api\/movies?page=1\",\n      \"last\": \"http:\/\/movie-api.test\/api\/movies?page=1\",\n      \"prev\": null,\n      \"next\": null\n  },\n  \"meta\": {\n      \"current_page\": 1,\n      \"from\": 1,\n      \"last_page\": 1,\n      \"links\": [\n          {\n              \"url\": null,\n              \"label\": \"&laquo; Previous\",\n              \"active\": false\n          },\n          {\n              \"url\": \"http:\/\/movie-api.test\/api\/movies?page=1\",\n              \"label\": \"1\",\n              \"active\": true\n          },\n          {\n              \"url\": null,\n              \"label\": \"Next &raquo;\",\n              \"active\": false\n          }\n      ],\n      \"path\": \"http:\/\/movie-api.test\/api\/movies\",\n      \"per_page\": 15,\n      \"to\": 3,\n      \"total\": 3\n  }\n}",
+                            "name": "Success"
+                        }
+                    ]
+                },
+                {
+                    "name": "Store Movie",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/movies",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/movies"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "multipart\/form-data"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "title",
+                                    "value": "The Matrix",
+                                    "type": "text",
+                                    "description": "The title of the movie. Must not be greater than 255 characters."
+                                },
+                                {
+                                    "key": "description",
+                                    "value": "A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.",
+                                    "type": "text",
+                                    "description": "The description of the movie. Must not be greater than 1000 characters."
+                                },
+                                {
+                                    "key": "length_in_seconds",
+                                    "value": 7260,
+                                    "type": "text",
+                                    "description": "The length of the movie in seconds. Must be at least 0. Must not be greater than 86400."
+                                },
+                                {
+                                    "key": "released_at",
+                                    "value": "1999-03-31",
+                                    "type": "text",
+                                    "description": "The date when the movie was released. Format: YYYY-MM-DD. Timezone: UTC. Must be a valid date."
+                                },
+                                {
+                                    "key": "available_until",
+                                    "value": "2021-12-31",
+                                    "type": "text",
+                                    "description": "The date when the movie will be available until. Format: YYYY-MM-DD. Timezone: UTC. Must be a valid date."
+                                },
+                                {
+                                    "key": "pictures[0][title]",
+                                    "value": "The Matrix",
+                                    "type": "text",
+                                    "description": ""
+                                },
+                                {
+                                    "key": "pictures[0][description]",
+                                    "value": "A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.",
+                                    "type": "text",
+                                    "description": ""
+                                },
+                                {
+                                    "key": "pictures[0][order]",
+                                    "value": 1,
+                                    "type": "text",
+                                    "description": ""
+                                },
+                                {
+                                    "key": "category_ids[0]",
+                                    "value": 1,
+                                    "type": "text",
+                                    "description": ""
+                                },
+                                {
+                                    "key": "tag_ids[0]",
+                                    "value": 1,
+                                    "type": "text",
+                                    "description": ""
+                                },
+                                {
+                                    "key": "pictures[][image]",
+                                    "src": [],
+                                    "type": "file"
+                                }
+                            ]
+                        },
+                        "description": "This endpoint will create a new movie",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 201,
+                            "body": "{\n  \"status\": \"success\",\n  \"message\": \"Movie successfully created\"\n}",
+                            "name": "Success"
+                        },
+                        {
+                            "header": [],
+                            "code": 400,
+                            "body": "{\n  \"message\": \"The example_field1 is required. (and 2 more errors)\",\n  \"errors\": {\n      \"example_field1\": [\"The example_field1 field is required.\"],\n      \"example_field2\": [\"The example_field2 field must be numeric.\"],\n      \"example_field3\": [\"The example_field3 field must be a date.\"]\n  }\n}\n",
+                            "name": "Validation Error"
+                        }
+                    ]
+                },
+                {
+                    "name": "Show Movie",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/movies\/:slug",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/movies\/:slug",
+                            "variable": [
+                                {
+                                    "id": "slug",
+                                    "key": "slug",
+                                    "value": "omnis",
+                                    "description": "The slug of the movie."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "This endpoint will show a movie",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 201,
+                            "body": "{\n  \"status\": \"success\",\n  \"message\": \"Package successfully retrieved\",\n  \"data\": {\n      \"slug\": \"the-matrix\",\n      \"title\": \"The Matrix\",\n      \"description\": \"A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.\",\n      \"released_date\": null,\n      \"available_until\": \"2023-06-30T23:59:59.000000Z\",\n      \"length_in_seconds\": 8160,\n      \"pictures\": [\n          {\n              \"id\": 1,\n              \"title\": \"The matrix one\",\n              \"description\": \"First picture of the matrix movie\",\n              \"image_url\": \"https:\/\/placekitten.com\/320\/180\",\n              \"order\": 1\n          },\n          {\n              \"id\": 2,\n              \"title\": \"The matrix two\",\n              \"description\": \"Second picture of the matrix movie\",\n              \"image_url\": \"https:\/\/placekitten.com\/336\/189\",\n              \"order\": 2\n          }\n      ],\n      \"tags\": [\n          {\n              \"id\": 3,\n              \"name\": \"Sci-fi\",\n              \"deleted_at\": null\n          },\n          {\n              \"id\": 6,\n              \"name\": \"Epic\",\n              \"deleted_at\": null\n          }\n      ],\n      \"categories\": [\n          {\n              \"id\": 1,\n              \"name\": \"Action\",\n              \"deleted_at\": null\n          },\n          {\n              \"id\": 3,\n              \"name\": \"Animation\",\n              \"deleted_at\": null\n          },\n          {\n              \"id\": 5,\n              \"name\": \"Comedy\",\n              \"deleted_at\": null\n          }\n      ],\n      \"deleted_at\": null\n  }\n}",
+                            "name": "Success"
+                        }
+                    ]
+                },
+                {
+                    "name": "Update Movie",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/movies\/:slug",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/movies\/:slug",
+                            "variable": [
+                                {
+                                    "id": "slug",
+                                    "key": "slug",
+                                    "value": "autem",
+                                    "description": "The slug of the movie."
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "multipart\/form-data"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "title",
+                                    "value": "The Matrix",
+                                    "type": "text",
+                                    "description": "The title of the movie. Must not be greater than 255 characters."
+                                },
+                                {
+                                    "key": "description",
+                                    "value": "A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.",
+                                    "type": "text",
+                                    "description": "The description of the movie. Must not be greater than 1000 characters."
+                                },
+                                {
+                                    "key": "length_in_seconds",
+                                    "value": 7260,
+                                    "type": "text",
+                                    "description": "The length of the movie in seconds. Must be at least 0. Must not be greater than 86400."
+                                },
+                                {
+                                    "key": "released_at",
+                                    "value": "1999-03-31",
+                                    "type": "text",
+                                    "description": "The date when the movie was released. Format: YYYY-MM-DD. Timezone: UTC. Must be a valid date."
+                                },
+                                {
+                                    "key": "available_until",
+                                    "value": "2021-12-31",
+                                    "type": "text",
+                                    "description": "The date when the movie will be available until. Format: YYYY-MM-DD. Timezone: UTC. Must be a valid date."
+                                },
+                                {
+                                    "key": "pictures[0][title]",
+                                    "value": "The Matrix",
+                                    "type": "text",
+                                    "description": ""
+                                },
+                                {
+                                    "key": "pictures[0][description]",
+                                    "value": "A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.",
+                                    "type": "text",
+                                    "description": ""
+                                },
+                                {
+                                    "key": "pictures[0][order]",
+                                    "value": 1,
+                                    "type": "text",
+                                    "description": ""
+                                },
+                                {
+                                    "key": "category_ids[0]",
+                                    "value": 1,
+                                    "type": "text",
+                                    "description": ""
+                                },
+                                {
+                                    "key": "tag_ids[0]",
+                                    "value": 1,
+                                    "type": "text",
+                                    "description": ""
+                                },
+                                {
+                                    "key": "remove_picture_ids[0]",
+                                    "value": 1,
+                                    "type": "text",
+                                    "description": ""
+                                },
+                                {
+                                    "key": "pictures[][image]",
+                                    "src": [],
+                                    "type": "file"
+                                },
+                                {
+                                    "key": "_method",
+                                    "value": "PUT",
+                                    "type": "text"
+                                }
+                            ]
+                        },
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n  \"status\": \"success\",\n  \"message\": \"Movie successfully updated\"\n}",
+                            "name": "Success"
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n  \"message\": \"No query results for model [App\\\\Models\\\\ModelName] 1\"\n}\n",
+                            "name": "Not Found"
+                        }
+                    ]
+                },
+                {
+                    "name": "Delete Movie",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/movies\/:slug",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/movies\/:slug",
+                            "variable": [
+                                {
+                                    "id": "slug",
+                                    "key": "slug",
+                                    "value": "itaque",
+                                    "description": "The slug of the movie."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "This endpoint will delete a movie",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n  \"status\": \"success\",\n  \"message\": \"Movie successfully trashed\"\n}",
+                            "name": "Success"
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n  \"message\": \"No query results for model [App\\\\Models\\\\ModelName] 1\"\n}\n",
+                            "name": "Not Found"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Tag management",
+            "description": "\nAPIs for managing tags",
+            "item": [
+                {
+                    "name": "Force Destroy tag",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/tags\/:id\/forceDestroy",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/tags\/:id\/forceDestroy",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "magnam",
+                                    "description": "The ID of the tag."
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "This endpoint will permanently delete a tag",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n  \"status\": \"success\",\n  \"message\": \"Tag successfully deleted\"\n}",
+                            "name": "Success"
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n  \"message\": \"No query results for model [App\\\\Models\\\\ModelName] 1\"\n}\n",
+                            "name": "Not Found"
+                        }
+                    ]
+                },
+                {
+                    "name": "Restore tag",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/tags\/:id\/restore",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/tags\/:id\/restore",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "iste",
+                                    "description": "The ID of the tag."
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "This endpoint will restore a tag",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n  \"status\": \"success\",\n  \"message\": \"Tag successfully restored\"\n}",
+                            "name": "Success"
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n  \"message\": \"No query results for model [App\\\\Models\\\\ModelName] 1\"\n}\n",
+                            "name": "Not Found"
+                        }
+                    ]
+                },
+                {
+                    "name": "Index Tags",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/tags",
+                            "query": [
+                                {
+                                    "key": "include_trashed",
+                                    "value": "",
+                                    "description": "Include trashed users.",
+                                    "disabled": true
+                                }
+                            ],
+                            "raw": "{{baseUrl}}\/api\/tags?include_trashed="
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "This endpoint will list all tags",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n  \"data\": [\n      {\n          \"id\": 1,\n          \"name\": \"Thrilling\",\n          \"deleted_at\": null\n      },\n      {\n          \"id\": 2,\n          \"name\": \"Rom-com\",\n          \"deleted_at\": null\n      },\n      {\n          \"id\": 3,\n          \"name\": \"Sci-fi\",\n          \"deleted_at\": null\n      },\n      {\n          \"id\": 4,\n          \"name\": \"Historical\",\n          \"deleted_at\": null\n      },\n      {\n          \"id\": 5,\n          \"name\": \"Psychological\",\n          \"deleted_at\": null\n      },\n      {\n          \"id\": 6,\n          \"name\": \"Epic\",\n          \"deleted_at\": null\n      },\n      {\n          \"id\": 7,\n          \"name\": \"Horror\",\n          \"deleted_at\": null\n      },\n      {\n          \"id\": 8,\n          \"name\": \"Inspirational\",\n          \"deleted_at\": null\n      },\n      {\n          \"id\": 9,\n          \"name\": \"Satire\",\n          \"deleted_at\": null\n      },\n      {\n          \"id\": 10,\n          \"name\": \"Psychological\",\n          \"deleted_at\": null\n      }\n  ],\n  \"links\": {\n      \"first\": \"http:\/\/movie-api.test\/api\/tags?page=1\",\n      \"last\": \"http:\/\/movie-api.test\/api\/tags?page=1\",\n      \"prev\": null,\n      \"next\": null\n  },\n  \"meta\": {\n      \"current_page\": 1,\n      \"from\": 1,\n      \"last_page\": 1,\n      \"links\": [\n          {\n              \"url\": null,\n              \"label\": \"&laquo; Previous\",\n              \"active\": false\n          },\n          {\n              \"url\": \"http:\/\/movie-api.test\/api\/tags?page=1\",\n              \"label\": \"1\",\n              \"active\": true\n          },\n          {\n              \"url\": null,\n              \"label\": \"Next &raquo;\",\n              \"active\": false\n          }\n      ],\n      \"path\": \"http:\/\/movie-api.test\/api\/tags\",\n      \"per_page\": 15,\n      \"to\": 10,\n      \"total\": 10\n  }\n}",
+                            "name": "Success"
+                        }
+                    ]
+                },
+                {
+                    "name": "Store Tag",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/tags",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/tags"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"My Tag\"}"
+                        },
+                        "description": "This endpoint will create a new tag",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 201,
+                            "body": "{\n  \"status\": \"success\",\n  \"message\": \"Tag successfully created\"\n}",
+                            "name": "Success"
+                        },
+                        {
+                            "header": [],
+                            "code": 400,
+                            "body": "{\n  \"message\": \"The example_field1 is required. (and 2 more errors)\",\n  \"errors\": {\n      \"example_field1\": [\"The example_field1 field is required.\"],\n      \"example_field2\": [\"The example_field2 field must be numeric.\"],\n      \"example_field3\": [\"The example_field3 field must be a date.\"]\n  }\n}\n",
+                            "name": "Validation Error"
+                        }
+                    ]
+                },
+                {
+                    "name": "Show tag",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/tags\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/tags\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "17",
+                                    "description": "The ID of the tag."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "This endpoint will show the details of the tag including favourite movies, categories and tags",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n  \"status\": \"success\",\n  \"message\": \"Tag successfully retrieved\",\n  \"data\": {\n      \"id\": 5,\n      \"name\": \"Psychological\",\n      \"movies\": [\n          {\n              \"slug\": \"the-dark-knight\",\n              \"title\": \"The Dark Knight\",\n              \"description\": \"When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.\",\n              \"released_date\": null,\n              \"available_until\": \"2023-06-30T23:59:59.000000Z\",\n              \"length_in_seconds\": 9120,\n              \"deleted_at\": null\n          }\n      ],\n      \"deleted_at\": null\n  }\n}",
+                            "name": "Success"
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n  \"message\": \"No query results for model [App\\\\Models\\\\ModelName] 1\"\n}\n",
+                            "name": "Not Found"
+                        }
+                    ]
+                },
+                {
+                    "name": "Update Tag",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/tags\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/tags\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "14",
+                                    "description": "The ID of the tag."
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"My Tag\"}"
+                        },
+                        "description": "This endpoint will update a Tag",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n  \"status\": \"success\",\n  \"message\": \"Tag successfully updated\"\n}",
+                            "name": "Success"
+                        },
+                        {
+                            "header": [],
+                            "code": 400,
+                            "body": "{\n  \"message\": \"The example_field1 is required. (and 2 more errors)\",\n  \"errors\": {\n      \"example_field1\": [\"The example_field1 field is required.\"],\n      \"example_field2\": [\"The example_field2 field must be numeric.\"],\n      \"example_field3\": [\"The example_field3 field must be a date.\"]\n  }\n}\n",
+                            "name": "Validation Error"
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n  \"message\": \"No query results for model [App\\\\Models\\\\ModelName] 1\"\n}\n",
+                            "name": "Not Found"
+                        }
+                    ]
+                },
+                {
+                    "name": "Delete tag",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/tags\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/tags\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the tag."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "This endpoint will delete a tag",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n  \"status\": \"success\",\n  \"message\": \"Tag successfully trashed\"\n}",
+                            "name": "Success"
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n  \"message\": \"No query results for model [App\\\\Models\\\\ModelName] 1\"\n}\n",
+                            "name": "Not Found"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "User management",
+            "description": "\nAPIs for managing users",
+            "item": [
+                {
+                    "name": "Force Destroy user",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/users\/:id\/forceDestroy",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/users\/:id\/forceDestroy",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "vel",
+                                    "description": "The ID of the user."
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "This endpoint will permanently delete a user",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n  \"status\": \"success\",\n  \"message\": \"User successfully deleted\"\n}",
+                            "name": "Success"
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n  \"message\": \"No query results for model [App\\\\Models\\\\ModelName] 1\"\n}\n",
+                            "name": "Not Found"
+                        }
+                    ]
+                },
+                {
+                    "name": "Restore user",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/users\/:id\/restore",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/users\/:id\/restore",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "ducimus",
+                                    "description": "The ID of the user."
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "This endpoint will restore a user",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n  \"status\": \"success\",\n  \"message\": \"User successfully restored\"\n}",
+                            "name": "Success"
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n  \"message\": \"No query results for model [App\\\\Models\\\\ModelName] 1\"\n}\n",
+                            "name": "Not Found"
+                        }
+                    ]
+                },
+                {
+                    "name": "Index Users",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/users",
+                            "query": [
+                                {
+                                    "key": "include_trashed",
+                                    "value": "",
+                                    "description": "Include trashed users.",
+                                    "disabled": true
+                                }
+                            ],
+                            "raw": "{{baseUrl}}\/api\/users?include_trashed="
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "This endpoint will list all users",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n  \"data\": [\n      {\n          \"id\": 1,\n          \"name\": \"Irma Cronin\",\n          \"email\": \"conor.williamson@example.org\",\n          \"phone_no\": \"1-931-312-0031\",\n          \"deleted_at\": null\n      },\n      {\n          \"id\": 2,\n          \"name\": \"Clifton Sanford MD\",\n          \"email\": \"orrin32@example.com\",\n          \"phone_no\": \"(541) 520-3759\",\n          \"deleted_at\": null\n      },\n      {\n          \"id\": 3,\n          \"name\": \"Dr. Earnestine Pacocha\",\n          \"email\": \"llewellyn32@example.net\",\n          \"phone_no\": \"1-682-751-0553\",\n          \"deleted_at\": null\n      },\n      {\n          \"id\": 4,\n          \"name\": \"Vernie Roberts\",\n          \"email\": \"schuster.blake@example.org\",\n          \"phone_no\": \"+1-228-783-6278\",\n          \"deleted_at\": null\n      },\n      {\n          \"id\": 5,\n          \"name\": \"Rylan Heaney I\",\n          \"email\": \"ckonopelski@example.net\",\n          \"phone_no\": \"(973) 586-8948\",\n          \"deleted_at\": null\n      },\n      {\n          \"id\": 6,\n          \"name\": \"Isabell Pagac\",\n          \"email\": \"frederic.kuhn@example.net\",\n          \"phone_no\": \"(508) 754-0538\",\n          \"deleted_at\": null\n      },\n      {\n          \"id\": 7,\n          \"name\": \"Mr. Bud D'Amore\",\n          \"email\": \"daija.corkery@example.org\",\n          \"phone_no\": \"(270) 303-9172\",\n          \"deleted_at\": null\n      },\n      {\n          \"id\": 8,\n          \"name\": \"Dr. Lloyd Cassin\",\n          \"email\": \"raven85@example.org\",\n          \"phone_no\": \"1-220-300-6490\",\n          \"deleted_at\": null\n      },\n      {\n          \"id\": 9,\n          \"name\": \"Dr. Natalie Collier III\",\n          \"email\": \"odaniel@example.net\",\n          \"phone_no\": \"(986) 979-0901\",\n          \"deleted_at\": null\n      },\n      {\n          \"id\": 10,\n          \"name\": \"Prof. Darron Bechtelar\",\n          \"email\": \"randall.macejkovic@example.com\",\n          \"phone_no\": \"+13604221010\",\n          \"deleted_at\": null\n      }\n  ],\n  \"links\": {\n      \"first\": \"http:\/\/movie-api.test\/api\/users?page=1\",\n      \"last\": \"http:\/\/movie-api.test\/api\/users?page=1\",\n      \"prev\": null,\n      \"next\": null\n  },\n  \"meta\": {\n      \"current_page\": 1,\n      \"from\": 1,\n      \"last_page\": 1,\n      \"links\": [\n          {\n              \"url\": null,\n              \"label\": \"&laquo; Previous\",\n              \"active\": false\n          },\n          {\n              \"url\": \"http:\/\/movie-api.test\/api\/users?page=1\",\n              \"label\": \"1\",\n              \"active\": true\n          },\n          {\n              \"url\": null,\n              \"label\": \"Next &raquo;\",\n              \"active\": false\n          }\n      ],\n      \"path\": \"http:\/\/movie-api.test\/api\/users\",\n      \"per_page\": 15,\n      \"to\": 10,\n      \"total\": 10\n  }\n}",
+                            "name": "Success"
+                        }
+                    ]
+                },
+                {
+                    "name": "Store User",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/users",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/users"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"John Doe\",\"email\":\"johndoe@example.com\",\"phone_no\":\"09 123 456 789\",\"category_ids\":[1],\"tag_ids\":[1],\"movie_ids\":[1]}"
+                        },
+                        "description": "This endpoint will create a new user",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 201,
+                            "body": "{\n  \"status\": \"success\",\n  \"message\": \"User successfully created\"\n}",
+                            "name": "Success"
+                        },
+                        {
+                            "header": [],
+                            "code": 400,
+                            "body": "{\n  \"message\": \"The example_field1 is required. (and 2 more errors)\",\n  \"errors\": {\n      \"example_field1\": [\"The example_field1 field is required.\"],\n      \"example_field2\": [\"The example_field2 field must be numeric.\"],\n      \"example_field3\": [\"The example_field3 field must be a date.\"]\n  }\n}\n",
+                            "name": "Validation Error"
+                        }
+                    ]
+                },
+                {
+                    "name": "Show user",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/users\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/users\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "16",
+                                    "description": "The ID of the user."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "This endpoint will show the details of the user including favourite movies, categories and tags",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n  \"status\": \"success\",\n  \"message\": \"User successfully retrieved\",\n  \"data\": {\n      \"id\": 3,\n      \"name\": \"Dr. Earnestine Pacocha\",\n      \"email\": \"llewellyn32@example.net\",\n      \"phone_no\": \"1-682-751-0553\",\n      \"favourite_tags\": [\n          {\n              \"id\": 1,\n              \"name\": \"Thrilling\",\n              \"deleted_at\": null\n          },\n          {\n              \"id\": 6,\n              \"name\": \"Epic\",\n              \"deleted_at\": null\n          },\n          {\n              \"id\": 10,\n              \"name\": \"Psychological\",\n              \"deleted_at\": null\n          }\n      ],\n      \"favourite_categories\": [\n          {\n              \"id\": 1,\n              \"name\": \"Action\",\n              \"deleted_at\": null\n          },\n          {\n              \"id\": 6,\n              \"name\": \"Crime\",\n              \"deleted_at\": null\n          },\n          {\n              \"id\": 10,\n              \"name\": \"Horror\",\n              \"deleted_at\": null\n          }\n      ],\n      \"favourite_movies\": [\n          {\n              \"slug\": \"titanic\",\n              \"title\": \"Titanic\",\n              \"description\": \"A seventeen-year-old aristocrat falls in love with a kind but poor artist aboard the luxurious, ill-fated R.M.S. Titanic.\",\n              \"released_date\": null,\n              \"available_until\": \"2023-06-30T23:59:59.000000Z\",\n              \"length_in_seconds\": 11640,\n              \"deleted_at\": null\n          },\n          {\n              \"slug\": \"star-wars-episode-v-the-empire-strikes-back\",\n              \"title\": \"Star Wars: Episode V - The Empire Strikes Back\",\n              \"description\": \"After the Rebels are brutally overpowered by the Empire on the ice planet Hoth, Luke Skywalker begins Jedi training with Yoda, while his friends are pursued by Darth Vader and a bounty hunter named Boba Fett all over the galaxy.\",\n              \"released_date\": null,\n              \"available_until\": \"2023-06-30T23:59:59.000000Z\",\n              \"length_in_seconds\": 7440,\n              \"deleted_at\": null\n          }\n      ],\n      \"deleted_at\": null\n  }\n}",
+                            "name": "Success"
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n  \"message\": \"No query results for model [App\\\\Models\\\\ModelName] 1\"\n}\n",
+                            "name": "Not Found"
+                        }
+                    ]
+                },
+                {
+                    "name": "Update User",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/users\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/users\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "4",
+                                    "description": "The ID of the user."
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"John Doe\",\"email\":\"johndoe@example.com\",\"phone_no\":\"09 123 456 789\",\"category_ids\":[1],\"tag_ids\":[1],\"movie_ids\":[1]}"
+                        },
+                        "description": "This endpoint will update a User",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n  \"status\": \"success\",\n  \"message\": \"User successfully updated\"\n}",
+                            "name": "Success"
+                        },
+                        {
+                            "header": [],
+                            "code": 400,
+                            "body": "{\n  \"message\": \"The example_field1 is required. (and 2 more errors)\",\n  \"errors\": {\n      \"example_field1\": [\"The example_field1 field is required.\"],\n      \"example_field2\": [\"The example_field2 field must be numeric.\"],\n      \"example_field3\": [\"The example_field3 field must be a date.\"]\n  }\n}\n",
+                            "name": "Validation Error"
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n  \"message\": \"No query results for model [App\\\\Models\\\\ModelName] 1\"\n}\n",
+                            "name": "Not Found"
+                        }
+                    ]
+                },
+                {
+                    "name": "Delete user",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/users\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/users\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the user."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "This endpoint will delete a user",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n  \"status\": \"success\",\n  \"message\": \"User successfully trashed\"\n}",
+                            "name": "Success"
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n  \"message\": \"No query results for model [App\\\\Models\\\\ModelName] 1\"\n}\n",
+                            "name": "Not Found"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "auth": {
+        "type": "noauth"
+    }
+}

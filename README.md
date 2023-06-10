@@ -1,66 +1,77 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Introduction
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+This application is build with the following stacks : PHP ^8.1 + Laravel ^10.10. I've made use of https://scribe.knuckles.wtf/ to document the APIs. You can either test through the postman collection in the root directory em-interview-movie-api.postman_collection.json or access the documentation at /docs after generating with the following command :
 
-## About Laravel
+```
+php artisan scribe:generate
+```
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+# Solution Approach
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Here's a database diagram of the application :
+*insert picture here
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+All the endpoints follow the laravel conventions for RESTful API resources along with restore, force destroy for models with soft delete. Currently there's no authentication implemented in the application. For APIs that require authentication, I would use Laravel Sanctum or Laravel Passport to implement token based authentication if it is a requirement.
 
-## Learning Laravel
+There are some notable quirks in the application that I would like to highlight : 
+1. I've used local storage driver for storing the images. This is not recommended for production environment. I would use S3 or any other cloud storage service for storing the images. Also instead of linking the storage with public, I've made a custom MoviePictureController to handle the image fetching. Normally I would have a seperate file model, controller and a service to handle all the drivers and file related operations in one place. But for the sake of simplicity I've used the MoviePictureController controller for fetching.
+2. I've created a job to clear the deleted movie pictures from the storage after 7 days.
+3. For now, I've relied on eloquent eager loading to fetch the related models. But if the application grows, we can add json columns to the tables to act as a cache for the related models which will be populated through jobs/queues. This will reduce the number of queries to the database and improve the performance of the application.
+4. To filter movies by categories or tags, you can either use show endpoints of tags and categories for single filtering or use the index endpoint of movies for multiple filtering. Here are some examples :
+```
+GET /api/tags/1
+GET /api/categories/1
+```
+```
+GET /api/movies?category_ids[]=1&category_ids[]=2&tag_ids[]=1&tag_ids[]=2
+```
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+# How to run
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## Method 1 Using Laravel Sail with Docker
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Make sure you have composer on your machine and your docker is running when using this method.
 
-## Laravel Sponsors
+Step 1 - Run the following command to install the dependencies
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+```
+composer install
+```
 
-### Premium Partners
+Step 2 - Run the following command to start the docker container
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+```
+./vendor/bin/sail up -d
+```
 
-## Contributing
+Step 3 - Once the container is up, Run the following command to run the migrations
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```
+./vendor/bin/sail artisan migrate:fresh --seed
+```
 
-## Code of Conduct
+Step 4 - You can now access the application on env('APP_URL') : http://movie-api.test
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## Method 2 Installing Laravel on your local machine
 
-## Security Vulnerabilities
+You'll need to have PHP 8.1 and composer installed on your local machine to use this method.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Step 1 - Run the following command to install the dependencies
 
-## License
+```
+composer install
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Step 2 - Run the following command to run the migrations
+
+```
+php artisan migrate:fresh --seed
+```
+
+Step 3 - Run the following command to start the application
+
+```
+php artisan serve
+```
+
+Step 4 - You can now access the application on 127.0.0.1:8000

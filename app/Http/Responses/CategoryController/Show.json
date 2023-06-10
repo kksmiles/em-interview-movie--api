@@ -1,0 +1,20 @@
+{
+  "status": "success",
+  "message": "Category successfully retrieved",
+  "data": {
+      "id": 4,
+      "name": "Biography",
+      "movies": [
+          {
+              "slug": "titanic",
+              "title": "Titanic",
+              "description": "A seventeen-year-old aristocrat falls in love with a kind but poor artist aboard the luxurious, ill-fated R.M.S. Titanic.",
+              "released_date": null,
+              "available_until": "2023-06-30T23:59:59.000000Z",
+              "length_in_seconds": 11640,
+              "deleted_at": null
+          }
+      ],
+      "deleted_at": null
+  }
+}
