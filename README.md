@@ -39,19 +39,31 @@ Step 1 - Run the following command to install the dependencies
 composer install
 ```
 
-Step 2 - Run the following command to start the docker container
+Step 2 - Copy the .env.example file to .env
+
+```
+cp .env.example .env
+```
+
+Step 3 - Generate APP_KEY
+
+```
+php artisan key:generate
+```
+
+Step 4 - Run the following command to start the docker container
 
 ```
 ./vendor/bin/sail up -d
 ```
 
-Step 3 - Once the container is up, Run the following command to run the migrations
+Step 5 - Once the container is up, Run the following command to run the migrations
 
 ```
 ./vendor/bin/sail artisan migrate:fresh --seed
 ```
 
-Step 4 - You can now access the application on env('APP_URL') : http://movie-api.test
+Step 6 - You can now access the application on env('APP_URL') : http://movie-api.test
 
 ## Method 2 Installing Laravel on your local machine
 
@@ -63,16 +75,28 @@ Step 1 - Run the following command to install the dependencies
 composer install
 ```
 
-Step 2 - Run the following command to run the migrations
+Step 2 - Copy the .env.example file to .env
+
+```
+cp .env.example .env
+```
+
+Step 3 - Generate APP_KEY
+
+```
+php artisan key:generate
+```
+
+Step 4 - Run the following command to run the migrations
 
 ```
 php artisan migrate:fresh --seed
 ```
 
-Step 3 - Run the following command to start the application
+Step 5 - Run the following command to start the application
 
 ```
 php artisan serve
 ```
 
-Step 4 - You can now access the application on 127.0.0.1:8000
+Step 6 - You can now access the application on 127.0.0.1:8000

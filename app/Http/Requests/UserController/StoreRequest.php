@@ -33,6 +33,7 @@ class StoreRequest extends FormRequest
             'tag_ids.*' => ['required', 'numeric', 'exists:tags,id'],
             'movie_ids' => ['sometimes', 'array'],
             'movie_ids.*' => ['required', 'numeric', 'exists:movies,id'],
+            'theme_settings' => ['sometimes', 'array'],
         ];
     }
 
@@ -62,6 +63,12 @@ class StoreRequest extends FormRequest
             'movie_ids.*' => [
                 'description' => 'IDs of User favourite movies.',
                 'example' => 1,
+            ],
+            'theme_settings' => [
+                'description' => 'The theme settings of the user.',
+                'example' => [
+                    'theme' => 'dark',
+                ],
             ],
         ];
     }

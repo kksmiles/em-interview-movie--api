@@ -19,6 +19,7 @@ class UserResource extends JsonResource
             'name' => $this->name,
             'email' => $this->email,
             'phone_no' => $this->phone_no,
+            'theme_settings' => $this->theme_settings,
             'favourite_tags' => TagResource::collection($this->whenLoaded('favourite_tags')),
             'favourite_categories' => CategoryResource::collection($this->whenLoaded('favourite_categories')),
             'favourite_movies' => MovieResource::collection($this->whenLoaded('favourite_movies')),

@@ -39,7 +39,7 @@ class Movie extends Model
     protected static function booted(): void
     {
         static::creating(function (Movie $movie) {
-            $slug = Str::slug($movie->title) . '-' . Str::random(6) . '-' . time();
+            $slug = Str::slug($movie->title).'-'.Str::random(6).'-'.time();
             $movie->slug = $slug;
         });
     }

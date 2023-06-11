@@ -2,64 +2,64 @@
   "status": "success",
   "message": "User successfully retrieved",
   "data": {
-      "id": 3,
-      "name": "Dr. Earnestine Pacocha",
-      "email": "llewellyn32@example.net",
-      "phone_no": "1-682-751-0553",
-      "favourite_tags": [
-          {
-              "id": 1,
-              "name": "Thrilling",
-              "deleted_at": null
-          },
-          {
-              "id": 6,
-              "name": "Epic",
-              "deleted_at": null
-          },
-          {
-              "id": 10,
-              "name": "Psychological",
-              "deleted_at": null
-          }
-      ],
-      "favourite_categories": [
-          {
-              "id": 1,
-              "name": "Action",
-              "deleted_at": null
-          },
-          {
-              "id": 6,
-              "name": "Crime",
-              "deleted_at": null
-          },
-          {
-              "id": 10,
-              "name": "Horror",
-              "deleted_at": null
-          }
-      ],
-      "favourite_movies": [
-          {
-              "slug": "titanic",
-              "title": "Titanic",
-              "description": "A seventeen-year-old aristocrat falls in love with a kind but poor artist aboard the luxurious, ill-fated R.M.S. Titanic.",
-              "released_date": null,
-              "available_until": "2023-06-30T23:59:59.000000Z",
-              "length_in_seconds": 11640,
-              "deleted_at": null
-          },
-          {
-              "slug": "star-wars-episode-v-the-empire-strikes-back",
-              "title": "Star Wars: Episode V - The Empire Strikes Back",
-              "description": "After the Rebels are brutally overpowered by the Empire on the ice planet Hoth, Luke Skywalker begins Jedi training with Yoda, while his friends are pursued by Darth Vader and a bounty hunter named Boba Fett all over the galaxy.",
-              "released_date": null,
-              "available_until": "2023-06-30T23:59:59.000000Z",
-              "length_in_seconds": 7440,
-              "deleted_at": null
-          }
-      ],
-      "deleted_at": null
+    "id": 3,
+    "name": "Dr. Earnestine Pacocha",
+    "email": "llewellyn32@example.net",
+    "phone_no": "1-682-751-0553",
+    "theme_settings": {
+      "theme": "dark"
+    },
+    "favourite_tags": [{
+        "id": 1,
+        "name": "Thrilling",
+        "deleted_at": null
+      },
+      {
+        "id": 6,
+        "name": "Epic",
+        "deleted_at": null
+      },
+      {
+        "id": 10,
+        "name": "Psychological",
+        "deleted_at": null
+      }
+    ],
+    "favourite_categories": [{
+        "id": 1,
+        "name": "Action",
+        "deleted_at": null
+      },
+      {
+        "id": 6,
+        "name": "Crime",
+        "deleted_at": null
+      },
+      {
+        "id": 10,
+        "name": "Horror",
+        "deleted_at": null
+      }
+    ],
+    "favourite_movies": [{
+        "slug": "titanic",
+        "title": "Titanic",
+        "description": "A seventeen-year-old aristocrat falls in love with a kind but poor artist aboard the luxurious, ill-fated R.M.S. Titanic.",
+        "released_date": null,
+        "available_until": "2023-06-30T23:59:59.000000Z",
+        "length_in_seconds": 11640,
+        "deleted_at": null
+      },
+      {
+        "slug": "star-wars-episode-v-the-empire-strikes-back",
+        "title": "Star Wars: Episode V - The Empire Strikes Back",
+        "description": "After the Rebels are brutally overpowered by the Empire on the ice planet Hoth, Luke Skywalker begins Jedi training with Yoda, while his friends are pursued by Darth Vader and a bounty hunter named Boba Fett all over the galaxy.",
+        "released_date": null,
+        "available_until": "2023-06-30T23:59:59.000000Z",
+        "length_in_seconds": 7440,
+        "deleted_at": null
+      }
+    ],
+    "deleted_at": null
   }
 }

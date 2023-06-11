@@ -25,6 +25,7 @@ class User extends Model
         'name',
         'email',
         'phone_no',
+        'theme_settings',
         // 'password',
     ];
 
@@ -33,12 +34,12 @@ class User extends Model
         'password',
         'remember_token',
     ];
-
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-        'password' => 'hashed',
-    ];
     */
+    protected $casts = [
+        // 'email_verified_at' => 'datetime',
+        // 'password' => 'hashed',
+        'theme_settings' => 'json',
+    ];
 
     public function favourite_movies()
     {
