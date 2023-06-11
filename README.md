@@ -10,7 +10,7 @@ php artisan scribe:generate
 
 Here's a database diagram of the application :
 
-![em er](https://github.com/kksmiles/em-interview-movie--api/assets/39384662/6632264d-6f0e-4037-ab53-c1748f083346)
+![EveryMatrix ER](https://github.com/kksmiles/em-interview-movie-api/assets/39384662/56ba2360-6fe4-4e8b-bdbe-75289b089c8a)
 
 All the endpoints follow the laravel conventions for RESTful API resources along with restore, force destroy for models with soft delete. Currently there's no authentication implemented in the application. For APIs that require authentication, I would use Laravel Sanctum or Laravel Passport to implement token based authentication if it is a requirement.
 
