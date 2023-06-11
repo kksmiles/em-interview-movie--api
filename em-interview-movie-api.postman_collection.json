@@ -1934,6 +1934,11 @@
 									"type": "text"
 								},
 								{
+									"key": "pictures[0][image]",
+									"type": "file",
+									"src": []
+								},
+								{
 									"key": "category_ids[0]",
 									"value": 1,
 									"type": "text"
@@ -1947,11 +1952,6 @@
 									"key": "remove_picture_ids[0]",
 									"value": 1,
 									"type": "text"
-								},
-								{
-									"key": "pictures[][image]",
-									"type": "file",
-									"src": []
 								},
 								{
 									"key": "_method",
@@ -2043,6 +2043,11 @@
 											"type": "text"
 										},
 										{
+											"key": "pictures[0][image]",
+											"type": "file",
+											"src": []
+										},
+										{
 											"key": "category_ids[0]",
 											"value": 1,
 											"type": "text"
@@ -2056,11 +2061,6 @@
 											"key": "remove_picture_ids[0]",
 											"value": 1,
 											"type": "text"
-										},
-										{
-											"key": "pictures[][image]",
-											"type": "file",
-											"src": []
 										},
 										{
 											"key": "_method",
@@ -2157,6 +2157,11 @@
 											"type": "text"
 										},
 										{
+											"key": "pictures[0][image]",
+											"type": "file",
+											"src": []
+										},
+										{
 											"key": "category_ids[0]",
 											"value": 1,
 											"type": "text"
@@ -2170,11 +2175,6 @@
 											"key": "remove_picture_ids[0]",
 											"value": 1,
 											"type": "text"
-										},
-										{
-											"key": "pictures[][image]",
-											"type": "file",
-											"src": []
 										},
 										{
 											"key": "_method",
